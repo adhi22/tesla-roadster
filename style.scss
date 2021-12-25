@@ -1,0 +1,316 @@
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('./fonts/PlusJakartaText-Regular.otf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+}
+
+
+::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #555;
+    border-radius: 1.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+
+$light : #eee;
+$dark : #000;
+$dark-opac : rgba(0, 0, 0, 0.7);
+
+header {
+    width: 100%;
+    height: 6rem;
+    background-color: $dark-opac;
+    color: $light;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        height: 0.75rem;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+            list-style-type: none;
+
+            a {
+                color: $light;
+                text-decoration: none;
+                margin: 1rem;
+            }
+        }
+    }
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    .line{
+        width: 1.25rem;
+        height: 2px;
+        background-color: $light;
+        margin: 6px;
+    }
+}
+
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('./images/tesla roadster.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+
+        h1 {
+            font-size: clamp(1rem, 7vw, 3rem);
+            //font-size: 7vw;
+            margin-top: 1.75rem;
+            color: $dark-opac;
+            letter-spacing: 1rem;
+        }
+
+        p {
+            margin: 1rem 1rem;
+            max-width: 40ch;
+        }
+    }
+}
+
+.specs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    padding: 2rem 0;
+    color: $light;
+    background-image: linear-gradient(to top, $dark-opac, transparent);
+
+    .spec-container {
+        margin: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .main {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        p:not(.main) {
+            font-size: 0.8rem;
+            margin: 0.75rem;
+        }
+    }
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    background-color: transparent;
+    color: $light;
+    border: 3px solid $light;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 250ms ease;
+}
+
+.btn:hover {
+    color: $dark;
+    background-color: $light;
+    transform: scale(1.1);
+}
+
+.heading {
+    width: 100%;
+    padding: 15vh 0;
+    text-align: center;
+    //background-color: $dark;
+    background-image: linear-gradient($dark, transparent);
+    color: $light;
+    font-size: clamp(2rem, 7vw, 3rem);
+   // letter-spacing: 2px;
+}
+
+.interior-intro {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('./images/interior.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.highlights {
+    background-color: $dark;
+
+    section {
+        display: flex;
+        flex-direction: row;
+        //min-width: 30rem;
+        width: 80%;
+        //max-width: 50rem;
+        padding: 3rem 0;
+        margin: auto;
+        
+        // img {
+        //     width: 50%;
+        // }
+
+        .info {
+            width: 50%;
+            color: $light;
+            display: flex;
+            justify-content: center;
+            //align-items: center;
+            flex-direction: column;
+            padding: 1rem;
+
+            h2, p {
+                padding: 0.5rem 0;
+            }
+            p {
+                line-height: 1.5rem;
+                opacity: 0.75;
+            }
+        }
+
+        .img {
+            width: 50%;
+            height: 20rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .space {
+            background-image: url('./images/seats.jpg');
+        }
+        .seats {
+            background-image: url('./images/Frame 3.png');
+        }
+    }
+}
+
+.specsheet {
+    background-color: $dark;
+    color: $light;
+
+    table {
+        margin: auto;
+        min-width: 20rem;
+        width: 50%;
+        max-width: 60rem;
+        border: none;
+        padding: 3rem 0;
+
+        th {
+            text-align: start;
+        }
+        td, th {
+            padding: 1rem;
+        }
+        td:nth-child(2) {
+            text-align: end;
+        }
+    }
+}
+
+footer {
+    background-color: $dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+    header {
+        background-color: $dark;
+    }
+    header ul {
+        position: absolute;
+        top: 6rem;
+        z-index: 1;
+        right: 0;
+        background-color: #000;
+        height: 50%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 500ms ease;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .specs {
+        flex-direction: column;
+
+        .spec-container {
+            flex-direction: row;
+        }
+    }
+
+    .highlights section {
+        flex-direction: column;
+        margin: auto;
+        .img {
+            height: 15rem;
+        }
+        .img, .info {
+            width: 100%;
+        }
+    }
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.show {
+    transform: translateX(0%);
+}
