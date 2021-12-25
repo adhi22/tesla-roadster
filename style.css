@@ -319,14 +319,17 @@ footer {
   header {
     background-color: #000;
   }
-  header ul {
+  .nav {
     position: absolute;
     top: 6rem;
     z-index: 1;
-    right: 0;
+    left: 0;
     background-color: #000;
     height: 50%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -337,12 +340,14 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
     -webkit-transition: -webkit-transform 500ms ease;
     transition: -webkit-transform 500ms ease;
     transition: transform 500ms ease;
     transition: transform 500ms ease, -webkit-transform 500ms ease;
+    -webkit-transform-origin: right;
+            transform-origin: right;
   }
   .burger {
     display: block;
@@ -390,8 +395,8 @@ footer {
           transform: translateY(0);
 }
 
-.show {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+.nav.show {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 /*# sourceMappingURL=style.css.map */
